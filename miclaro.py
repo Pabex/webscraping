@@ -10,20 +10,8 @@ CLAVE_CLARO = ""
 SEGUNDOS_TIMEOUT = 10
 
 lineas = [{
-    "nombre": "Alcira",
-    "linea": "3584158833"
-}, {
-    "nombre": "Tancacha",
-    "linea": "3571353454"
-}, {
-    "nombre": "Almafuerte",
-    "linea": "3512065182"
-}, {
-    "nombre": "Hernando",
-    "linea": "3512065608"
-}, {
-    "nombre": "Las Varillas",
-    "linea": "3533510689"
+    "nombre": "",
+    "linea": ""
 }
 ]
 #############################
