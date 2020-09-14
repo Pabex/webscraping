@@ -1,0 +1,3 @@
+requests==2.24
+beautifulsoup4==4.9
+fake-useragent
