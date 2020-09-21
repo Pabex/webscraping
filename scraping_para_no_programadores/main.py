@@ -20,25 +20,30 @@ parser.add_argument("selector")
 args = parser.parse_args()
 
 print("\nScrapeando la url:")
-print("\t" + args.url)
+print("\033[1;34m\t" + args.url + "\033[0m")
 print("\nBuscando el selector:")
-print("\t" + args.selector)
+print("\033[1;32m\t" + args.selector + "\033[0m")
 
 url = args.url
 selector = args.selector
+
+# Reemplazo nth-child por nth-of-type.
+selector = selector.replace("nth-child", "nth-of-type")
 
 response = requests.get(url)
 
 bs = BeautifulSoup(response.text, "html.parser")
 
-articles = bs.select(selector)
+elements = bs.select(selector)
 
 found = False
-for article in articles:
-    print("\nResultado encontrado")
-    print(article.text)
-    print("=============================================================")
+count = 1
+for element in elements:
+    print("\nResultado número: " + str(count))
+    print(element.text)
+    print("\033[1;36m=============================================================\033[0m")
     found = True
+    count += 1
 
 if not found:
     print("\nNo se encontraron resultados")
