@@ -3,3 +3,4 @@ beautifulsoup4==4.9
 fake-useragent
 pyautogui
 pyscreenshot
+requests[socks]
