@@ -27,16 +27,19 @@ print("\t" + args.selector)
 url = args.url
 selector = args.selector
 
+# Reemplazo nth-child por nth-of-type.
+selector = selector.replace("nth-child", "nth-of-type")
+
 response = requests.get(url)
 
 bs = BeautifulSoup(response.text, "html.parser")
 
-articles = bs.select(selector)
+elements = bs.select(selector)
 
 found = False
-for article in articles:
+for element in elements:
     print("\nResultado encontrado")
-    print(article.text)
+    print(element.text)
     print("=============================================================")
     found = True
 
