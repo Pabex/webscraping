@@ -20,9 +20,9 @@ parser.add_argument("selector")
 args = parser.parse_args()
 
 print("\nScrapeando la url:")
-print("\t" + args.url)
+print("\033[1;34m\t" + args.url + "\033[0m")
 print("\nBuscando el selector:")
-print("\t" + args.selector)
+print("\033[1;32m\t" + args.selector + "\033[0m")
 
 url = args.url
 selector = args.selector
@@ -37,11 +37,13 @@ bs = BeautifulSoup(response.text, "html.parser")
 elements = bs.select(selector)
 
 found = False
+count = 1
 for element in elements:
-    print("\nResultado encontrado")
+    print("\nResultado número: " + str(count))
     print(element.text)
-    print("=============================================================")
+    print("\033[1;36m=============================================================\033[0m")
     found = True
+    count += 1
 
 if not found:
     print("\nNo se encontraron resultados")
